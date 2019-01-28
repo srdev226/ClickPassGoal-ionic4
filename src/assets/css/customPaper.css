@@ -1,0 +1,157 @@
+.sidebar-wrapper{
+    display: block;
+    /*box-shadow: 0 2px 22px 0 rgba(0,0,0,.2), 0 2px 30px 0 rgba(0,0,0,.35);*/
+    /*background: #37a0e6;*/
+    box-shadow: none !important;
+
+
+}
+.sidebar .sidebar-wrapper, .off-canvas-sidebar .sidebar-wrapper {
+    height: calc(100%) !important;
+}
+.sidebar .nav li:not(.active) > a{
+    color: #ffffff;
+}
+.off-canvas-sidebar .nav li.active>a, .off-canvas-sidebar .nav li.active>a i, .sidebar .nav li.active>a, .sidebar .nav li.active>a i{
+    color: #37a0e6;
+}
+.sidebar .sidebar-wrapper > .nav, .off-canvas-sidebar .sidebar-wrapper > .nav{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.off-canvas-sidebar .nav li>a, .sidebar .nav li>a {
+    margin: 10px 15px 0;
+    border-radius: 30px;
+    color: #fff;
+    display: block;
+    text-decoration: none;
+    position: relative;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: .7142em;
+    padding: 10px 8px;
+    line-height: 1.625rem;
+}
+.off-canvas-sidebar .nav li.active>a, .sidebar .nav li.active>a {
+    background-color: #fff;
+    box-shadow: 0 1px 15px 1px rgba(39,39,39,.1);
+    border-radius: 30px;
+}
+.sidebar .nav li.active > a, .off-canvas-sidebar .nav li.active > a {
+    color: #37a0e6 !important;
+    opacity: 1;
+}
+.sidebar .sidebar-wrapper li.active > a:not([data-toggle="collapse"]):after, .sidebar .sidebar-wrapper li.active > a:not([data-toggle="collapse"]):before{
+    display: none !important;
+}
+.sidebar .logo, .off-canvas-sidebar .logo{
+    box-shadow: none !important;
+}
+.sidebar .logo:before, .sidebar[data-background-color="white"] .logo:before, .off-canvas-sidebar .logo:before, .off-canvas-sidebar[data-background-color="white"] .logo:before,
+.sidebar .user:after, .sidebar[data-background-color="white"] .user:after, .off-canvas-sidebar .user:after, .off-canvas-sidebar[data-background-color="white"] .user:after{
+    background-color: hsla(0,0%,100%,.5);
+}
+.navbar-default {
+    /*border-bottom: 1px solid #cfcfca;*/
+    /*border-color: hsla(0,0%,100%,.5);*/
+    width: 100%;
+    height: 130px;
+    /*padding-top: 80px;*/
+    /*padding-bottom: 45px;*/
+    background: #141e30;
+    background: linear-gradient(to right, #0e2849 28%, rgba(95, 177, 232, 1) 100%);
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+}
+.main-panel{
+    background-color: #0e2849;
+    /*background-color: hsla(0,0%,100%,.5) !important;*/
+    /*background-color: #ffffff  !important;*/
+}
+.sidebar .user .info > a > span, .off-canvas-sidebar .user .info > a > span{
+    color: #ffffff;
+    font-size: 16px;
+}
+.sidebar .user .photo, .sidebar[data-background-color="white"] .user .photo, .off-canvas-sidebar .user .photo, .off-canvas-sidebar[data-background-color="white"] .user .photo {
+    border-color: #2c2c2c;
+}
+.sidebar .user .photo, .sidebar[data-background-color="white"] .user .photo, .off-canvas-sidebar .user .photo, .off-canvas-sidebar[data-background-color="white"] .user .photo {
+    background: #fff;
+}
+.page-header {
+    display: block;
+    margin-bottom: 1.5em;
+    color: #3b3f45;
+    content: 'Confirma tus datos y envíanos tu ficha';
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2em;
+    margin-top: 0px !important;
+}
+.container-fluid{
+    padding-left:5px !important;
+    padding-right:5px  !important;
+}
+.customFirstContainer{
+    background: #E8E8EE;
+    border-top-left-radius: 5px;
+}
+.customFirstContainer > .container-fluid{
+    margin-top: -60px;
+}
+.select2-container--bootstrap .select2-selection--single{
+    background-color: #F5F5F5;
+    height: 40px;
+    border-radius: 4px;
+    box-shadow: none;
+    border: 1px solid #e8e7e3;
+    padding: 10px 18px;
+}
+.select2-container--bootstrap.select2-container--focus .select2-selection, .select2-container--bootstrap.select2-container--open .select2-selection{
+    border: 1px solid #e8e7e3;
+    background-color: #FFFFFF;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: 0 !important;
+}
+.select2-container--bootstrap.select2-container--focus .select2-selection:focus, .select2-container--bootstrap.select2-container--open .select2-selection:focus {
+
+}
+@media (min-width: 1200px) {
+    .customSecondContainer{
+        /*margin-top:-70px;*/
+    }
+}.card{
+    border-radius: 3px !important;
+    padding: 10px 5px 30px 0px;
+}
+table > thead > tr > th {
+    color: #37a0e6;
+}
+.dashNotWrapper {
+    position: absolute;
+    top: 10px;
+}
+.dashNotWrapper .alert{
+    padding: 12px 50px;
+}
+.dashNotWrapper button.close{
+    display: none;
+}
+.nolistyle{
+    list-style: none !important;
+    -webkit-padding-start: 0px;
+}
+.has-error .form-control, .form-control.error {
+    background-color: #FFC0A4;
+    color: #333 ;
+    border-color: #FFC0A4;
+}
+.card-body{
+    margin: 0px 10px;
+}
+.swal2-container:not(.swal2-in){
+    pointer-events: auto !important ;
+}

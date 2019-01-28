@@ -1,0 +1,37 @@
+.navigation {
+    position: fixed;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        left: -320px !important;
+        height: 530px;
+        margin-top: 70px;
+    }
+
+    .sidebar, .sidebar:before, .sidebar:after {
+        border-radius: 0px 12px 12px 0px;
+        background-color: rgba(0,0,0,0.6) !important;
+    }
+    .sidebar .sidebar-wrapper {
+        height: 530px;
+        overflow: hidden;
+    }
+
+    .sidebar.opened {
+        left: 0px !important;
+    }
+
+    .logo {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+
+}
+  
+.sidebar {
+    left: 0px;
+    width: 320px !important;
+}

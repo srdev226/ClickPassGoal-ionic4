@@ -1,0 +1,34 @@
+.back-black {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: #000;
+}
+
+.hide-serach {
+    display: none;
+}
+
+.wrapper {
+    overflow-y: auto;
+}
+
+@media (min-width: 769px) {
+    .search-box {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-panel>.content {
+        padding-top: unset;
+    }
+
+    form {
+        padding: 0px 7%;
+    }
+
+    /* .card-footer, .card-header {
+        padding: 20px;
+    } */
+}

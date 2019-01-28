@@ -1,0 +1,31 @@
+.header {
+    height: 76px;
+    padding: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.18);
+    background: rgba(0, 0, 0, 0.11);
+}
+
+@media (min-width: 769px) {
+    .header .logo {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        height: 60px;
+        padding: 9px;
+        margin-bottom: 15px;
+        /* border: 1px solid rgba(0, 0, 0, 0.44);
+        background: rgba(0, 0, 0, 0.3); */
+    }
+
+    .header .logo {
+        text-align: left;
+        margin-left: 5%;
+    }
+
+    .header .logoSmall {
+        margin-top: -2px;
+    }
+}

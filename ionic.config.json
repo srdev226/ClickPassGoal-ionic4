@@ -1,0 +1,7 @@
+{
+  "name": "MyNotes",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

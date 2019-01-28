@@ -1,0 +1,40 @@
+<ion-app>
+  <!--The content below is only a placeholder and can be replaced.-->
+  <div class="wrapper">
+  <!-- Video BG -->
+  <div class="back-black">
+    <video id="video" class="video" muted="muted" loop="loop" autoplay="autoplay">
+        <source src="../assets/video/stars.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+  </div>
+  <!-- Left Navigation -->
+  <app-navigation [search]="search"></app-navigation>
+  <div class="main-panel">
+
+      <!-- Top Navigation -->
+      <app-header></app-header>
+      <!-- Main Content -->
+      <div class="content">
+          <div class="container-fluid">
+              <!-- Notifications -->
+              <!-- @include('partials.notifications') -->
+
+              <!-- Content -->
+              <!-- @yield('content') -->
+              <form [formGroup]="filterForm" (ngSubmit)="onSubmit()" class="search-box">
+                <div class="form-group">
+                  <mat-form-field class="form-control customInput animated delay-0s" [ngClass]="{'fadeOut': pageStatusService.getStatus()!='user-lists', 'fadeIn': pageStatusService.getStatus()=='user-lists'}">
+                    <input matInput type="text" formControlName="search" placeholder="Buscar" id="search" [(ngModel)]="search">
+                  </mat-form-field> 
+                </div>
+              </form>
+              <div [@Animation2]="prepareRoute(o)">
+                <!-- <router-outlet #o="outlet"></router-outlet> -->
+                <router-outlet #o="outlet"></router-outlet>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</ion-app>

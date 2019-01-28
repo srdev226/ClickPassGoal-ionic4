@@ -1,0 +1,173 @@
+@media (min-width: 1100px) {
+    .menu li h2 {
+
+    }
+    .intro{
+        margin-top: 5%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .menu li h2 {
+        /*font-size: 115%;*/
+        /*margin-top: 3px;*/
+    }
+    .intro{
+        margin-top: 5%;
+    }
+    .representante{
+        margin-top: 0px;
+    }
+    .inner{
+        padding: 50px 0px;
+    }
+    .leftImg img{
+        margin-left: 50px;
+    }
+    .qincio img, .qfinal img{
+        width: 75%;
+    }
+    .mContentR{
+        padding: 20px 0px;
+    }
+    .main {
+        /*margin-top: 0px;*/
+
+    }
+}
+
+@media (max-width: 768px) {
+    .menu li h2 {
+        /*font-size: 100%;*/
+    }
+    .menu li{
+        /*min-height: 50px;*/
+        width: 50%;
+    }
+    .intro{
+        margin-top: 5%;
+    }
+    .intro .helement{
+        font-size: 250%;
+    }
+    .izq{
+        width: 100%;
+        padding: 45px 0px 0px 0px;
+    }
+    .izq img{
+        width: 30%;
+    }
+    .der{
+        width: 100%;
+        padding: 20px 20px 0px 0px;
+    }
+    .final .inner{
+        padding: 5px;
+    }
+    .final .btn-info{
+        margin-top: 0px;
+    }
+    .dreamBox {
+        background: url('/img/transp.png') repeat-x;
+    }
+    .succesBox{
+        margin: 5%;
+    }
+    .btn-acepto{
+        width: 100% !important;
+        padding: 25px;
+        overflow: hidden;
+        /* margin-left: -10px; */
+        margin: 5px 0px;
+    }
+    .btn-acepto{
+        font-size: 14px;
+    }
+}
+@media (max-width: 668px){
+    .main {
+        margin-top: -15px;
+    }
+    .menu li h2, .Mobilemenu li h2{
+        width: 100%;
+        font-size: 100%;
+    }
+}
+@media (max-width: 500px) {
+    .howitworks{
+        display: block;
+    }
+    .howitworks li {
+        width: 100%;
+        margin: 25px 0px;
+        display: block;
+    }
+    .menu li {
+
+        width: 45%;
+    }
+    .main {
+        min-height: 500px;
+        /*margin-top: 50px;*/
+    }
+    .inner{
+        padding: 50px 0%;
+    }
+    .izq img{
+        width: 50%;
+    }
+    footer{
+        overflow: hidden;
+        margin-bottom:-2px;
+        height: 160px;
+    }
+    .loginBox{
+        width: 90%;
+        margin: 5%;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .welcomeMsg{
+        margin-bottom: 10%;
+        margin-top: 10%;
+    }
+    .welcomeMsg h2.logoSmall {
+        font-size: 28px !important;
+    }
+}
+@media (max-width: 402px) {
+
+    .main {
+        margin-top:0px;
+    }
+    .inner h1{
+        font-size: 200%;
+    }
+    .inner h2{
+        font-size: 175%;
+    }
+    .howitworks{
+        margin-bottom: 25px;
+    }
+    .howitworks li{
+        width: auto;
+        display: block;
+        padding: 10px 0px;
+    }
+    .representante{
+        width: 100%;
+        padding: 0px;
+        margin-top: 0px;
+
+    }
+
+    .qincio{
+        left: -5px;
+    }
+    .qfinal{
+
+    }
+    .mContentR{
+        padding: 12px 5px;
+    }
+}

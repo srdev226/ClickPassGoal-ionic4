@@ -1,0 +1,286 @@
+<div class="lds-roller" *ngIf="!is_details_loaded"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+<div class="user-profile-page" *ngIf="is_details_loaded">
+  <div class="first-row col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 profile">
+      <div class="icon-box pointer animated delay-0s {{comeOutAnimation}}" [ngClass]="{'opened': opened[0]}" (click)="opened[0]=!opened[0]">
+        <div class="icon-field">
+            <i class="material-icons">
+              info_outline
+            </i>
+        </div>
+        <div class="text" *ngIf="opened[0]">
+          <p class="name">Perfil</p>
+          <p class="title">Ubicación</p>
+          <p>{{getUbicacion(jugador.provincia, jugador.code)}}</p>
+          <p class="title">Pasaporte</p>
+          <p>aaa</p>
+          <p class="title">Fecha de Nacimiento</p>
+          <p>{{jugador.fecha_nacimiento ? jugador.fecha_nacimiento : "24 Abril 1990"}}</p>
+          <p class="title">
+            <span>Edad</span>
+            <span>Altura</span>
+            <span>Peso</span>
+          </p>
+          <p>
+            <span>{{jugador.edad}}</span>
+            <span>{{formatHeight(jugador.altura)}}</span>
+            <span>{{jugador.peso}}</span>
+          </p>
+        </div>
+      </div>
+      <p class="field-name animated delay-0s {{comeOutAnimation}}" *ngIf="!opened[0]">Perfil</p>
+    </div>
+
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 valucation">
+      <div class="icon-box pointer animated delay-0s {{comeOutAnimation}}"  [ngClass]="{'opened': opened[1]}" (click)="opened[1]=!opened[1]">
+        <div class="icon-field">
+            <i class="material-icons">
+              attach_money
+            </i>
+        </div>
+        <div class="text" *ngIf="opened[1]">
+          <p class="name">Valuación Estimada</p>
+        </div>
+      </div>
+      <p class="field-name animated delay-0s {{comeOutAnimation}}" *ngIf="!opened[1]">Valuación</p>
+    </div>
+
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 redes">
+      <div class="icon-box pointer animated delay-0s {{comeOutAnimation}}" [ngClass]="{'opened': opened[2]}" (click)="opened[2]=!opened[2]">
+        <div class="icon-field">
+          <i class="material-icons">
+            share
+          </i>
+        </div>
+      </div>
+      <p class="field-name animated delay-0s {{comeOutAnimation}}" *ngIf="!opened[2]">Redes</p>
+    </div>
+  </div>
+
+  <div class="second-row col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 user" style="z-index: 1000;">
+      <div class="animated delay-0s {{comeOutAnimation}}">
+        <div class="arrow-back">
+          <button mat-fab (click)="previousProfile()"><i class="material-icons">arrow_back</i></button>
+        </div>
+        
+        <div class="user-info">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 user-img"><img src="assets/img/default.png" class="profileTableImg"></div>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 user-name">{{jugador.nombre}}</div>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 user-position {{jugador.posicion}}">{{jugador.posicion}}</div>
+          <button mat-raised-button class="btn btn-blue btn-fill submitFilters col-lg-12 col-md-12 col-sm-12 col-xs-12">LO QUIERO!</button>
+        </div>
+        <div class="arrow-forward">
+          <button mat-fab (click)="nextProfile()"><i class="material-icons">arrow_forward</i></button>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
+  </div>
+
+  <div class="third-row col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 imagenes">
+      <div class="icon-box pointer animated delay-0s {{comeOutAnimation}}" [ngClass]="{'opened': opened[3]}" (click)="opened[3]=!opened[3]">
+        <div class="icon-field">
+            <i class="material-icons">
+              image_outline
+            </i>
+        </div>
+      </div>
+      <p class="field-name animated delay-0s {{comeOutAnimation}}" *ngIf="!opened[3]">Imágenes Videos</p>
+    </div>
+
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 trayectoria">
+      <div class="icon-box pointer animated delay-0s {{comeOutAnimation}}"  [ngClass]="{'opened': opened[4]}" (click)="opened[4]=!opened[4]">
+        <div class="icon-field">
+          <i class="material-icons">
+            history
+          </i>
+        </div>
+        <div class="text" *ngIf="opened[4]">
+          <p class="name">Trayectoria</p>
+        </div>
+      </div>
+      <p class="field-name animated delay-0s {{comeOutAnimation}}" *ngIf="!opened[4]">Trayectoria</p>
+    </div>
+
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 biografia">
+      <div class="icon-box pointer animated delay-0s {{comeOutAnimation}}" [ngClass]="{'opened': opened[5]}" (click)="opened[5]=!opened[5]">
+        <div class="icon-field">
+          <i class="material-icons">
+            list_alt
+          </i>
+        </div>
+        <div class="text" *ngIf="opened[5]">
+          <p class="name">Biografía</p>
+        </div>
+        <div class="contents" *ngIf="opened[5]">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore. 
+        </div>
+      </div>
+      <p class="field-name animated delay-0s {{comeOutAnimation}}" *ngIf="!opened[5]">Biografía</p>
+    </div>
+  </div>
+</div>
+
+<!-- mobile-version -->
+<div class="user-profile-page-small" *ngIf="is_details_loaded">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 goto-userlist animated delay-0s {{comeOutAnimation}}">
+      <span class="small-button pointer" (click)="gotoUserList()"><i class="material-icons">keyboard_arrow_left</i></span>
+      <span class="text">Volver a Listado de Jugadores</span>
+  </div>
+  <div class="first-row col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="user-info-small animated delay-0s {{comeOutAnimation}}">
+      <div class="small-button pointer" (click)="previousProfile()"><div><i class="material-icons">keyboard_arrow_left</i></div></div>
+      <div class="profileImg"><img src="assets/img/default.png"></div>
+      <div class="user-info">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 user-name">{{jugador.nombre}}</div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 user-position {{jugador.posicion}}">{{jugador.posicion}}</div>
+      </div>
+      <div class="small-button pointer" (click)="nextProfile()"><div><i class="material-icons">keyboard_arrow_right</i></div></div>
+    </div>
+  </div>
+  <div class="ball-list" *ngIf ="selected_category == -1">
+    <div class="second-row col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ball">
+        <div class="icon-box pointer animated delay-0s {{comeOutAnimation}}" [ngClass]="{'highlighted': ball_index == 0}" (click)="selectCategory(0)">
+          <div class="icon-field">
+              <i class="material-icons">
+                info_outline
+              </i>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ball">
+        <div class="icon-box pointer animated delay-0s {{comeOutAnimation}}" [ngClass]="{'highlighted': ball_index == 1}" (click)="selectCategory(1)">
+          <div class="icon-field">
+              <i class="material-icons">
+                attach_money
+              </i>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ball">
+        <div class="icon-box pointer animated delay-0s {{comeOutAnimation}}" [ngClass]="{'highlighted': ball_index == 2}" (click)="selectCategory(2)">
+          <div class="icon-field">
+            <i class="material-icons">
+              share
+            </i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="third-row col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ball">
+        <div class="icon-box pointer animated delay-0s {{comeOutAnimation}}" [ngClass]="{'highlighted': ball_index == 3}" (click)="selectCategory(3)">
+          <div class="icon-field">
+              <i class="material-icons">
+                image_outline
+              </i>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ball">
+        <div class="icon-box pointer animated delay-0s {{comeOutAnimation}}" [ngClass]="{'highlighted': ball_index == 4}" (click)="selectCategory(4)">
+          <div class="icon-field">
+            <i class="material-icons">
+              history
+            </i>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ball">
+        <div class="icon-box pointer animated delay-0s {{comeOutAnimation}}" [ngClass]="{'highlighted': ball_index == 5}" (click)="selectCategory(5)">
+          <div class="icon-field">
+            <i class="material-icons">
+              list_alt
+            </i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="fouth-row col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <!-- {{ballName[ball_index]}} -->
+      <div *ngIf="index < 7"
+        ng2-carouselamos
+        [width]="300"
+        [items]="ballName"
+        [$item]="itemTemplate"
+        [$prev]="prevTemplate"
+        [$next]="nextTemplate"
+      ></div>
+      <ng-template #prevTemplate>
+        <div #previous style="display: none"></div>
+      </ng-template>
+         
+      <ng-template #nextTemplate>
+        <div #next style="display: none"></div>
+      </ng-template>
+      <ng-template let-item let-i="index" #itemTemplate>
+        <div style="width: 300px; height: 50px;">
+          <div  class="item" >{{item}}</div>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+  <div *ngIf ="selected_category >= 0" class="category-list animated delay-0s {{comeOutAnimation}}">
+    <div
+      ng2-carouselamos
+      class="category"
+      [items]="categoryName"
+      [$item]="itemTemplate"
+      [$prev]="prevTemplate"
+      [$next]="nextTemplate"
+      (onMouseUp)="onMouseUp($event)"
+      (onMouseDown)="onMouseDown($event)"
+    ></div>
+    <ng-template #prevTemplate>
+      <div #previous_category style="display: none"></div>
+    </ng-template>
+       
+    <ng-template #nextTemplate>
+      <div #next_category style="display: none"></div>
+    </ng-template>
+    <ng-template let-item let-i="index" #itemTemplate>
+      <div #categoryList class="category item">
+        <app-category 
+          [jugador]="jugador" 
+          [category_index]="i" 
+          [selected_index]="selected_category"
+          [eventUp]="eventUp"
+          [eventDown]="eventDown" 
+          (categoryClosed)="closeCategory()" 
+          (ngtouch)="closeCategory()">
+        </app-category>
+      </div>
+    </ng-template>
+  </div>
+  <div class="user"><div class="user-info animated delay-0s {{comeOutAnimation}}"><button mat-raised-button class="btn btn-blue btn-fill submitFilters col-lg-12 col-md-12 col-sm-12 col-xs-12">LO QUIERO!</button></div></div>
+  
+</div>
+<!--       <div *ngIf="ball_index < 5"
+        ng2-carouselamos
+        [width]="300"
+        [items]="ballName"
+        [$item]="itemTemplate"
+        [$prev]="prevTemplate"
+        [$next]="nextTemplate"
+      ></div>
+      <ng-template #prevTemplate>
+        <div #previous style="display: none"></div>
+      </ng-template>
+         
+      <ng-template #nextTemplate>
+        <div #next style="display: none"></div>
+      </ng-template>
+      <ng-template let-item let-i="index" #itemTemplate>
+        <div style="width: 300px; height: 50px;">
+          <div  class="item" >{{item}}</div>
+        </div>
+      </ng-template> -->

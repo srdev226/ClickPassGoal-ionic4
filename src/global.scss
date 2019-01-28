@@ -1,0 +1,171 @@
+// http://ionicframework.com/docs/theming/
+@import '~@ionic/angular/css/core.css';
+@import '~@ionic/angular/css/normalize.css';
+@import '~@ionic/angular/css/structure.css';
+@import '~@ionic/angular/css/typography.css';
+
+@import '~@ionic/angular/css/padding.css';
+@import '~@ionic/angular/css/float-elements.css';
+@import '~@ionic/angular/css/text-alignment.css';
+@import '~@ionic/angular/css/text-transformation.css';
+@import '~@ionic/angular/css/flex-utils.css';
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~animate.css/animate.min.css";
+
+router-outlet ~ * {
+    position: absolute;
+    // height: 100%;
+    width: calc(100% - 50px);
+}
+
+@media (max-width: 768px) {
+  router-outlet ~ * {
+    width: 100%;
+  }
+  .container, .container-fluid {
+    margin: unset;
+    padding: unset;
+  }
+
+  .main-panel>.content {
+    padding: unset;
+  }
+}
+.lds-roller {
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    top: calc(50% - 32px);
+    position: fixed;
+    left: calc(50% + 128px);
+  }
+
+  @media (max-width: 1024px) {
+      .lds-roller {
+        left: calc(50% - 32px);
+      }
+  }
+  .lds-roller div {
+    animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    -webkit-animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    transform-origin: 32px 32px;
+    -webkit-transform-origin: 32px 32px;
+  }
+  .lds-roller div:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #fff;
+    margin: -3px 0 0 -3px;
+  }
+  .lds-roller div:nth-child(1) {
+    animation-delay: -0.036s;
+    -webkit-animation-delay: -0.036s;
+  }
+  .lds-roller div:nth-child(1):after {
+    top: 50px;
+    left: 50px;
+  }
+  .lds-roller div:nth-child(2) {
+    animation-delay: -0.072s;
+    -webkit-animation-delay: -0.072s;
+  }
+  .lds-roller div:nth-child(2):after {
+    top: 54px;
+    left: 45px;
+  }
+  .lds-roller div:nth-child(3) {
+    animation-delay: -0.108s;
+    -webkit-animation-delay: -0.108s;
+  }
+  .lds-roller div:nth-child(3):after {
+    top: 57px;
+    left: 39px;
+  }
+  .lds-roller div:nth-child(4) {
+    animation-delay: -0.144s;
+    -webkit-animation-delay: -0.144s;
+  }
+  .lds-roller div:nth-child(4):after {
+    top: 58px;
+    left: 32px;
+  }
+  .lds-roller div:nth-child(5) {
+    animation-delay: -0.18s;
+    -webkit-animation-delay: -0.18s;
+  }
+  .lds-roller div:nth-child(5):after {
+    top: 57px;
+    left: 25px;
+  }
+  .lds-roller div:nth-child(6) {
+    animation-delay: -0.216s;
+    -webkit-animation-delay: -0.216s;
+  }
+  .lds-roller div:nth-child(6):after {
+    top: 54px;
+    left: 19px;
+  }
+  .lds-roller div:nth-child(7) {
+    animation-delay: -0.252s;
+    -webkit-animation-delay: -0.252s;
+  }
+  .lds-roller div:nth-child(7):after {
+    top: 50px;
+    left: 14px;
+  }
+  .lds-roller div:nth-child(8) {
+    animation-delay: -0.288s;
+    -webkit-animation-delay: -0.288s;
+  }
+  .lds-roller div:nth-child(8):after {
+    top: 45px;
+    left: 10px;
+  }
+  @keyframes lds-roller {
+    0% {
+      transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+    }
+  }
+   
+  @-webkit-keyframes lds-roller {
+    0% {
+      transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+    }
+  }
+
+.pointer {
+    cursor: pointer;
+}
+
+.main-panel{
+  width: calc(100% - 320px);
+}
+
+@media (max-width: 768px) {
+  .main-panel{
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+
+}
+
+.cdk-overlay-container {
+  z-index: 10000 !important;
+}
